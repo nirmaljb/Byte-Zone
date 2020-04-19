@@ -1,0 +1,405 @@
+@import "util";
+@import "animation";
+
+// Core
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Special
+#main-nav h1 span {
+  background: linear-gradient(to right, #ef596f, #d8c3ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease;
+}
+
+header {
+  background: linear-gradient(-45deg, #d1495b, #1b4079, #d1495b);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+}
+
+// Navigation
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+#main-nav {
+  height: 12vh;
+  z-index: 10;
+  color: #fff;
+  transition: all 0.3s ease-out;
+
+  .container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+
+    ul {
+      display: flex;
+      list-style: none;
+
+      li {
+        display: inline-block;
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+.btn-info {
+  border: 3px solid purple;
+  border-radius: 40px;
+  padding: 0.5rem 0.8rem;
+  transition: border 0.2s ease;
+}
+
+.btn-info:hover {
+  border-color: #fff;
+}
+
+.btn-un:hover {
+  text-decoration: underline;
+}
+
+#section {
+  &-home {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    z-index: 9;
+    background: linear-gradient(-45deg, #d1495b, #1b4079, #d1495b);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+
+    .container {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      h1 {
+        color: #fff;
+        font-size: 3.8rem;
+        font-family: "Open Sans", sans-serif;
+        font-weight: bold;
+      }
+
+      .btn {
+        color: #fff;
+        margin-top: 50px;
+        animation: 4s infinite buttonPulse ease-out;
+
+        i {
+          margin-right: 10px;
+        }
+      }
+    }
+    img {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+  &-pricing {
+    padding-bottom: 100px;
+    border-bottom: 1px dotted #ccc;
+
+    .section-title {
+      margin-bottom: 100px;
+    }
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: center;
+      text-align: center;
+
+      div {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 3rem;
+
+        .price {
+          filter: drop-shadow(0px 2px 12px #333);
+        }
+
+        ul {
+          list-style: none;
+          line-height: 1.8;
+
+          li {
+            display: block;
+            border-bottom: 1px dotted #333;
+            margin-bottom: 10px;
+          }
+        }
+        &:nth-child(2) {
+          z-index: 1;
+          background: linear-gradient(-45deg, #ab1c43, #a02f9d);
+          color: #fff;
+          transform: scale(1.1);
+          border: none;
+          box-shadow: 0px 5px 10px #333;
+
+          img {
+            width: 40%;
+          }
+        }
+
+        a {
+          display: inline-block;
+          color: #fff;
+          margin-top: 30px;
+          background: #7737bd;
+          border: none;
+          padding: 0.8rem 1.8rem;
+          border-radius: 33px;
+          transition: all 0.3s ease;
+
+          &:hover {
+            opacity: 0.9;
+            filter: drop-shadow(0px 2px 8px #333);
+          }
+        }
+      }
+
+      img {
+        width: 60%;
+      }
+    }
+  }
+
+  &-features {
+    margin-top: 30px;
+
+    h1 {
+      color: #07f;
+    }
+
+    .section-words {
+      padding-top: 40px;
+      padding-bottom: 60px;
+      font-size: 22px;
+      text-align: center;
+      margin: auto;
+      max-width: 70%;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 3rem;
+
+      img {
+        position: relative;
+        right: 20px;
+        width: 35%;
+      }
+
+      h3 {
+        margin-top: -20px;
+      }
+
+      p {
+        margin-top: 20px;
+        font-size: 15px;
+        color: rgb(142, 137, 137);
+      }
+    }
+  }
+  &-footer {
+    height: 50vh;
+    background: #282f3d;
+    color: #fff;
+
+    .col {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem;
+
+      div {
+        margin-top: 60px;
+
+        ul {
+          list-style: none;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  // border-top: 1px dotted #333;
+  background: #282f3d;
+
+  .container {
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+
+    ul {
+      display: flex;
+      list-style: none;
+      cursor: pointer;
+
+      li {
+        padding: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  #section {
+    &-home {
+      .container {
+        h1 {
+          font-size: 3rem;
+          text-align: center;
+        }
+      }
+    }
+    &-footer {
+      height: 30vh;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  #main-nav {
+    .container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      li {
+        padding: 0.5rem;
+
+        .btn-info {
+          padding: 0.2rem 0.5rem;
+        }
+      }
+    }
+  }
+
+  #section {
+    &-home {
+      height: 70vh;
+      .container {
+        h1 {
+          font-size: 2rem;
+        }
+      }
+      img {
+        display: none;
+      }
+    }
+
+    &-pricing {
+      .cards {
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+
+        div {
+          padding: 2rem;
+
+          &:nth-child(2) {
+            transform: scale(1);
+          }
+        }
+      }
+    }
+    &-features {
+      .section-words {
+        font-size: 18px;
+        max-width: 320px;
+        margin: auto;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+        text-align: center;
+
+        img {
+          right: 0px;
+          justify-content: center;
+        }
+      }
+    }
+    &-footer {
+      height: 100vh;
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .col {
+        grid-template-columns: 1fr;
+
+        div {
+          margin-top: 30px;
+          padding-bottom: 20px;
+          border-bottom: 1px dotted #444;
+
+          &:last-child {
+            border: none;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    p {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  #section {
+    &-footer {
+      .col {
+        div {
+          ul {
+            font-size: 0.75rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Iphone fucking 5/SE
+@media (max-width: 330px) {
+  #section {
+    &-pricing {
+      .section-title {
+        font-size: 2rem;
+      }
+    }
+    &-footer {
+      .col {
+        div {
+          margin-bottom: -30px;
+        }
+      }
+    }
+  }
+  footer {
+    p {
+      font-size: 0.5rem;
+    }
+
+    ul {
+      font-size: 0.7rem;
+    }
+  }
+}

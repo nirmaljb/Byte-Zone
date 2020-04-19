@@ -1,0 +1,23 @@
+@keyframes gradientBG {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
+@keyframes buttonPulse {
+  0% {
+    box-shadow: 0 0 0 0 hsla(100, 60%, 50%, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 12px hsla(100, 60%, 50%, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 12px hsla(100, 60%, 50%, 0);
+  }
+}

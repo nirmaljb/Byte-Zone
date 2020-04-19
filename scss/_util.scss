@@ -1,0 +1,64 @@
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.btn {
+  font-size: 18px;
+  padding: 26px 30px;
+  box-shadow: 0 0 0 0 hsla(100, 60%, 50%, 0.6);
+  background-color: #66cc33;
+  border-radius: 10px;
+}
+
+img {
+  width: 100%;
+}
+
+.py-1 {
+  padding: 1rem 0;
+}
+.py-2 {
+  padding: 2rem 0;
+}
+.py-3 {
+  padding: 3rem 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.section-title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.lead {
+  font-size: 1.8rem;
+  font-weight: bold;
+  // margin-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.price {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  filter: drop-shadow(0px 2px 10px #000);
+}
+
+@media (max-width: 600px) {
+  .section-title {
+    font-size: 2.5rem;
+  }
+}
